@@ -78,8 +78,8 @@ def render(x, n):
 
 
 
-
-k = 20
+'''
+k = 6
 v = [0]*k
 wu = [0]*k
 v[1] = [[1]]
@@ -104,9 +104,9 @@ for i in range(2,k):
 	wu[i] = sorted(wu[i])
 		
 
-# eg = [2,2]
-# a = SrSq(1,eg)
-# print(a)
+eg = [2,2]
+a = SrSq(1,eg)
+print(a)
 length = []
 itemlist = []
 p = 2
@@ -122,15 +122,4 @@ print(length)
 
 with open('outfile', 'wb') as fp:
     pickle.dump(itemlist, fp)
-
-
-
-
-
-
-
-
-
-
-
-
+'''

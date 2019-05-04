@@ -3,7 +3,7 @@ import pickle
 
 # x= [i,j], 0<i<2j
 
-p = 7 #a prime
+p = 3 #a prime
 
 def adem(x):
 	ans = []
@@ -47,40 +47,42 @@ def calc(inp):
 	return ans
 
 
-a = calc(inp)
-#print(a)
-
-
-# print(a)
-temp = []	
-while a != temp:
-	temp = a
-	a = calc(a)
-	# print("loops")
+def result(inp):
+	a = calc(inp)
 	#print(a)
 
-result = []
-final = []
-for i in a:
-	temp_coef = i.pop()
-	while 0 in i:
-		i.remove(0)
-		print(i)
-	i.append(temp_coef)
-	
-for i in a:
-	mul = 0
-	for j in a: #Field of order 2
-		if i[0:len(i)-1] == j[0:len(j)-1]:
-			mul += j[len(j)-1]
 
-	result.append(i[0:len(i)-1] + [mul])
+	# print(a)
+	temp = []	
+	while a != temp:
+		temp = a
+		a = calc(a)
+		# print("loops")
+		#print(a)
 
-for i in result:
-	if not i in final:
-		final.append(i)
+	result = []
+	final = []
+	for i in a:
+		temp_coef = i.pop()
+		while 0 in i:
+			i.remove(0)
+			print(i)
+		i.append(temp_coef)
+	for i in a:
+		mul = 0
+		for j in a: #Field of order 2
+			if i[0:len(i)-1] == j[0:len(j)-1]:
+				mul += j[len(j)-1]
 
-print(final)
+		result.append(i[0:len(i)-1] + [mul])
+
+	for i in result:
+		if not i in final:
+			final.append(i)
+
+	return final
+
+print(result(inp))
 
 
 

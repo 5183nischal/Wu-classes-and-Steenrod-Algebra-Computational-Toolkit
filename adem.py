@@ -39,23 +39,28 @@ def calc(inp):
 		ans += out
 	return ans
 
-a = calc(inp)
-# print(a)
-temp = []	
-while a != temp:
-	temp = a
-	a = calc(a)
-	#print(a)
 
-result = []
-for i in a:
-	if 0 in i:
-		i.remove(0)
-for i in a:
-	if a.count(i) %2 != 0 and not (i in result): #Field of order 2
-		result.append(i)
 
-print(result)
+def result(inp):
+	a = calc(inp)
+	# print(a)
+	temp = []	
+	while a != temp:
+		temp = a
+		a = calc(a)
+		#print(a)
+
+	result = []
+	for i in a:
+		if 0 in i:
+			i.remove(0)
+	for i in a:
+		if a.count(i) %2 != 0 and not (i in result): #Field of order 2
+			result.append(i)
+
+	return result
+
+#print(result(inp))
 
 
 
